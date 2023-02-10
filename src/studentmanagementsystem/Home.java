@@ -419,19 +419,16 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-         String id = txtUSN.getText();
-          // TODO add your handling code here:
+         String usn = txtUSN.getText();
         try{
         
-                    pst = con.prepareStatement("DELETE FROM users WHERE id= ?");
-                    pst.setString(1, id);                    
-
-                    
+                    pst = con.prepareStatement("DELETE FROM _students WHERE usn = ?");
+                    pst.setString(1, usn);                    
                     int k = pst.executeUpdate();
                     if(k == 1){
-                        JOptionPane.showMessageDialog(this, "deleted");
-                        txt1.setText("");
-                        Fetch();
+                        JOptionPane.showMessageDialog(this, "Deleted!");
+                        resetFields();
+                        fetchRecords();
                     }
                     else{
                         JOptionPane.showMessageDialog(this, "err");
