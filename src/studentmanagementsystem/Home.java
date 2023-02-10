@@ -463,8 +463,6 @@ public class Home extends javax.swing.JFrame {
             pst.setString(5, email);
             pst.setString(6, branch);
 
-
-
             int k = pst.executeUpdate();
             if(k == 1){
                 JOptionPane.showMessageDialog(this, "Recrd Added!");
@@ -473,7 +471,6 @@ public class Home extends javax.swing.JFrame {
             }
             else{
                 JOptionPane.showMessageDialog(this, "Failed To Add Record!");
-
             }
         }
         catch(SQLException ex){
@@ -530,8 +527,6 @@ public class Home extends javax.swing.JFrame {
             pst.setString(5, branch);
             pst.setString(6, usn);
 
-
-
             int k = pst.executeUpdate();
             if(k == 1){
                 JOptionPane.showMessageDialog(this, "Updated!");
@@ -540,7 +535,6 @@ public class Home extends javax.swing.JFrame {
             }
             else{
                 JOptionPane.showMessageDialog(this, "err");
-
             }
         }
         catch(SQLException ex){
@@ -568,7 +562,7 @@ public class Home extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
+                if ("Metal".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
